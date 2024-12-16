@@ -3,6 +3,23 @@
  * Punctuation.java
  * Take a block of text and return the words that have punctuation in it or next to it
  * Working on: String and object reference
+ * Pseudocode:
+ * main()	
+ * 	Make an instance of the class
+ * 	Call the method searchIt
+ * searchIt(parameter)
+ * 	set a variable called punctuations as the method getPunctuationwords
+ * 	call printeors and send punctuations as a parameter
+ * getPunctuationWords(parmeter)
+ * 	D&I a varible and input the string into it
+ * 	Set punctuations as an empty string
+ * 	Start the loop
+ * 	Return punctuations
+ * checkForPunctuation(parameter)
+ * 	Start the loop
+ * printWords(parameter)
+ * 	Start the loop
+ * 	print out the words
  */
  
  public class Punctuation
@@ -12,14 +29,14 @@
 	 }
 	 public static void main (String [] args)
 	 {
-		 Punctuation pU = new Punctuation();
-		 searchIt();
+		 Punctuation pU = new Punctuation();			//Instantiate the class
+		 searchIt();									//Call searchIt
 	 }
 	 
 	 public static void searchIt()
 	 {
-		 String punctuationWords = getPunctuationWords();
-		 printWords(punctuationWords);
+		 String punctuations = getPunctuationWords();	//D&I the variable punctations as the method getPunctuationWords()
+		 printWords(punctuations);						//call printIt method
 	 }
 	 
 	 public static String getPunctuationWords()
@@ -30,7 +47,7 @@
 			"On Friday evening last I received His Majesty’s commission to form a new " +
 			"Administration. It was the evident wish and will of Parliament and thenation" + 
 			"that this should be conceived on the broadest possible basis and that it should" +
-			"include all parties, both those who supported the late Government and also the parties of the Opposition." +
+			"include all parties, both those who supported the late Government and also the parties of the Opposition. " +
 			"I have completed the most important part of this task. A War Cabinet has been formed of five Members, "+
 			"representing, with the Liberal Opposition, the unity of the nation. The three party " +
 			"Leaders have agreed to serve, either in the War Cabinet or in high executive office. " +
@@ -49,7 +66,7 @@
 			"business to be considered during that week will be notified to Members at the earliest "+
 			"opportunity. I now invite the House, by the Resolution which stands in my name, to "+
 			"record its approval of the steps taken and to declare its confidence in the new "+
-			"Government." +
+			"Government. " +
 			"Sir, to form an Administration of this scale and complexity is a serious "+
 			"undertaking in itself, but it must be remembered that we are in the preliminary stage of "+
 			"one of the greatest battles in history, that we are in action at many points in Norway and "+
@@ -74,11 +91,11 @@
 			"will not be suffered to fail among men. At this time I feel entitled to claim the aid of all, "+
 			"and I say, \"Come then, let us go forward together with our united strength.\"");
 		 
-		 String punctuationWords = "";
-		 int i = 0;
-		 for(int num = 0; num < word.length()-1; num++)
+		 String punctuations = "";				//Set punctuations as a blanck string
+		 int i = 0;								//make a new int variable called i, We will use this later
+		 for(int num = 0; num < word.length()-1; num++)	//Start the loop
 		 {
-			char letter = word.charAt(num);
+			char letter = word.charAt(num);		//Set letter as the cariable for charAt num
 			
 			 if(letter == ' ')
 			 {
@@ -87,7 +104,7 @@
 				 {
 					 if (checkForPunctuation(yellow))
 					 {
-						 punctuationWords += yellow+" ";
+						 punctuations += yellow+" ";
 					 }
 				 
 				 }
@@ -96,7 +113,7 @@
 					 yellow = word.substring(i);
 					 if (checkForPunctuation(yellow))
 					 {
-						 punctuationWords += yellow + " ";
+						 punctuations += yellow + " ";
 					 }
 					 
 				 }
@@ -107,15 +124,15 @@
 		 
 		
 		 }
-		 return punctuationWords;
+		 return punctuations;
 	}
 	 
 	  public static boolean checkForPunctuation(String yellow)
 	  {
-		  for (int z = 0; z<yellow.length(); z++)
+		  for (int z = 0; z<yellow.length(); z++)			//Start a new loop
 		  {
-			  char comp = yellow.charAt(z);
-			  if(",?.!'\";:([{-)}]".indexOf(comp) >= 0)
+			  char comp = yellow.charAt(z);					//comp is going to be the variable that holds the calue of charAt z
+			  if(",?.!'\";:([{-)}]".indexOf(comp) >= 0)	
 			  {
 				  return true;
 			  }
@@ -138,7 +155,7 @@
 				  {
 					  bag = words.substring(book);
 				  }
-				  System.out.println(bag);
+				  System.out.println(bag);			//Print out the output
 				  book = h+1;
 		      }
 			}
